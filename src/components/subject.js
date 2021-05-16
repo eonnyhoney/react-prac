@@ -11,6 +11,7 @@ class Subject extends Component {
             href="/"
             onClick={function (e) {
               e.preventDefault();
+              console.log("event event in", this);
               this.props.onChangePage();
             }.bind(this)}
           >

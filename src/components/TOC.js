@@ -10,7 +10,16 @@ class TOC extends Component {
     while (i < data.length) {
       lists.push(
         <li key={data[i].id}>
-          <a href={data[i].id}>{data[i].title}</a>
+          <a
+            href={data[i].id}
+            data-id={data[i].id}
+            onClick={function (id, e) {
+              e.preventDefault();
+              this.props.onChangePage(id);
+            }.bind(this, data[i].id)}
+          >
+            {data[i].title}
+          </a>
         </li>
       );
       i = i + 1;
